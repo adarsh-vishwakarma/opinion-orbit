@@ -5,10 +5,6 @@ import "../styles/prism.css";
 import "../styles/theme.css";
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/Theme/theme-provider";
