@@ -1,1 +1,0 @@
-ALTER TABLE "feedbacks" ADD COLUMN "rating" integer;

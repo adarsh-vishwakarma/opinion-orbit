@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"  // Adjust according to your database provider
+  url      = env("DATABASE_URL") // Your database connection URL
+}
+
+model User {
+  id                 String   @id @default(cuid())
+  email              String?  @unique
+  name               String?
+  image              String?
+  provider           String?  // OAuth provider (e.g., Google, GitHub)
+  providerAccountId  String?  // OAuth provider account ID
+
+  // Relations
+  projects           Project[]
+  subscriptions      Subscription[]
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  url         String
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Feedback relation
+  feedbacks   Feedback[]
+}
+
+model Feedback {
+  id        Int      @id @default(autoincrement())
+  projectId Int
+  userName  String
+  userEmail String
+  message   String
+  rating    Int
+
+  // Relation back to Project
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Subscription {
+  id                    Int      @id @default(autoincrement())
+  userId                String   @map("user_id")
+  stripeCustomerId      String
+  stripeSubscriptionId  String
+  subscribed            Boolean
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
