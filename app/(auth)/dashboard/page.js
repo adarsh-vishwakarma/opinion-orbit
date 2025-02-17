@@ -1,25 +1,37 @@
-"use client"
+import ProjectList from "@/components/ProjectList";
+import { NEXT_AUTH } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
+import { getServerSession } from "next-auth";
+import React from "react";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+
+const page = async () => {
+  const session = await getServerSession(NEXT_AUTH);
+  if (!session) return <div>Loading...</div>;
+
+  const userProjects = await prisma.project.findMany({
+    where: { userId:  session.user.id },
+  });
 
 
-export default function Home() {
-  const session = useSession();
-  if(!session) return <div>Loading</div>
 
+
+ 
   return (
-    <>
+    <div className={`container mx-auto px-4`}>
      
-     
-    <div className="ml-64">
-    
-      <div className="ml-10 w-full ">
-      {JSON.stringify(session)}
-      <button onClick={signOut}>Sign Out</button>
+        <h1 className="text-4xl font-bold mb-6 text-gray-800 tracking-tight">
+          Dashboard 📄
+        </h1>
+        <div className="w-full h-[1px] bg-gray-200"></div>
+        <section className="text-center">
+
+        <ProjectList projects={userProjects}/>
+        </section>
+   
     </div>
-      
-    </div>
-    </>
-    
   );
-}
+};
+
+export default page;
+// {JSON.stringify(session)}{" "}
