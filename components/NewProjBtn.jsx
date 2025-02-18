@@ -27,7 +27,7 @@ const NewProjBtn = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="flex justify-between items-center w-[160px] rounded-xl bg-orange-600 text-white hover:bg-orange-800 px-5 py-2"
+        className="flex justify-between items-center w-[160px] rounded-xl bg-black text-white hover:bg-black px-5 py-2"
       >
         <Plus className="w-4 h-4 mr-3" />
         <span>New Project</span>

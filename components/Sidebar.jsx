@@ -32,8 +32,8 @@ const pathname = usePathname()
             <Link key={item.href} href={item.href} >
                 <div className={`w-full flex justify-start items-center mb-2 py-3 px-4 rounded-md ${
                   pathname === item.href
-                    ? "bg-orange-100 text-orange-800"
-                    : "text-gray-600 hover:bg-gray-100"
+                    ? "bg-gray-600 text-white"
+                    : "text-gray-800 hover:bg-gray-100"
                 }`}>
                 <item.icon className="mr-3 h-5 w-5" />
                 <span className="text-base">{item.label}</span>

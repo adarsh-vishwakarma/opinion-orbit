@@ -24,15 +24,16 @@ const ProjectList = async (props) => {
 
       {/* Button Box */}
       <div className="mt-auto flex flex-wrap justify-end gap-2">
-        <button className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 w-full sm:w-auto">
-          Delete
-        </button>
+        
         <Link
           href={`/projects/${project.projectKey}`}
-          className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 w-full sm:w-auto text-center"
+          className="bg-gray-800 text-white px-4 py-2 rounded-md hover:black w-full sm:w-auto text-center"
         >
           View
         </Link>
+        <button className="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-900 w-full sm:w-auto">
+          Delete
+        </button>
       </div>
     </li>
   ))}
