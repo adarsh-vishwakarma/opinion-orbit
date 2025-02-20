@@ -70,7 +70,7 @@ const Article1 = () => {
 
               <blockquote className="pl-5 mt-8 border-l-2 border-white">
                 <p className="text-lg italic font-medium text-center sm:text-left">
-                  Join the Opinify.in community today and discover how we turn feedback into success strategies.
+                  Join the Opinion Orbit community today and discover how we turn feedback into success strategies.
                 </p>
               </blockquote>
 

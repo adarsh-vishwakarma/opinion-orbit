@@ -51,7 +51,39 @@ const NewProjBtn = () => {
                 <label htmlFor="description" className="block text-sm font-medium">Description</label>
                 <textarea id="description" name="description" placeholder="Description (optional)" className="w-full p-2 border rounded-md"></textarea>
               </div>
-              <button type="submit" className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Submit</button>
+              <button
+  type="submit"
+  disabled={loading}
+  className={`w-full p-2 rounded-md text-white ${
+    loading ? "bg-gray-400 cursor-not-allowed" : "bg-gray-800 hover:bg-black"
+  }`}
+>
+  {loading ? (
+    <svg
+      className="animate-spin h-5 w-5 mx-auto text-white"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      ></circle>
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+      ></path>
+    </svg>
+  ) : (
+    "Submit"
+  )}
+</button>
+
             </form>
             <button
               onClick={() => setIsOpen(false)}

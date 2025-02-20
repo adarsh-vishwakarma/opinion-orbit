@@ -53,8 +53,10 @@ const page = async ({ params }) => {
 
     {/* Feedback Table - Scrollable on Small Screens */}
     <div className="mt-6 overflow-x-auto">
-      <Table feedbacks={feedbacks} />
-    </div>
+  <div className="min-w-full">
+    <Table feedbacks={feedbacks} />
+  </div>
+</div>
   </div>
   );
 };
