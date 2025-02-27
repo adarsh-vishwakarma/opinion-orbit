@@ -20,7 +20,8 @@ export const pricingPlans= [
     price: 6.99,
     description: "For growing teams",
     isPopular: true,
-    url: "/payments/subscribe?plan=monthly",
+    url: "/pricing",
+    // url: "/payments/subscribe?plan=monthly",
     features: [
       "Unlimited projects",
       "Unlimited users",

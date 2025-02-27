@@ -42,7 +42,9 @@ const PricingCard = ({ title, price, description, features, isPopular, url }) =>
         </ul>
       </div>
       <div>
-        <button onClick={onClick} className="bg-gray-900 py-2 mt-3 rounded-lg text-white w-full">
+        <button 
+        // onClick={onClick} 
+        className="bg-gray-900 py-2 mt-3 rounded-lg text-white w-full">
           Select Plan
         </button>
       </div>

@@ -101,7 +101,7 @@ model Feedback {
   userEmail String
   message   String
   rating    Int
-  project   Project @relation("ProjectFeedbacks", fields: [projectId], references: [projectKey])
+  project   Project @relation("ProjectFeedbacks", fields: [projectId], references: [projectKey], onDelete: Cascade)
 }
 
 model Subscription {

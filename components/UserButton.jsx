@@ -25,7 +25,6 @@ const UserButton = ({session}) => {
         <div className="absolute right-0 mt-2 w-48 bg-white shadow-md rounded-md p-2">
           <ul className="text-gray-800">
             <li className="p-2 hover:bg-gray-100 cursor-pointer">Profile</li>
-            <li className="p-2 hover:bg-gray-100 cursor-pointer">Settings</li>
             <li className="p-2 hover:bg-gray-100 cursor-pointer" onClick={()=>{signOut({callbackUrl: "/"})}}>Logout</li>
           </ul>
         </div>

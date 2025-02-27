@@ -2,6 +2,16 @@
 
 This is a [Next.js](https://nextjs.org) project for managing feedback across multiple projects. It allows you to embed a feedback widget on any website and centralize all responses in one dashboard.
 
+## Features
+
+- **Easy Integration**: Embed a simple widget into any website.
+- **Centralized Feedback Management**: Collect and manage feedback from multiple projects in one place.
+- **Customizable UI**: Modify the widget's appearance to match your branding.
+- **Anonymous & Authenticated Feedback**: Allow users to submit feedback anonymously or require authentication.
+- **Real-time Notifications**: Receive instant alerts when new feedback is submitted.
+- **Analytics & Insights**: Gain insights from user feedback with visual reports and trends.
+- **Multi-Project Support**: Manage feedback across different projects from a single dashboard.
+
 ## Getting Started
 
 First, clone the repository and install dependencies:
