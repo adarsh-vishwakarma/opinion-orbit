@@ -8,7 +8,7 @@ export const metadata = {
 
 const Article1 = () => {
   return (
-    <div className="w-full">
+    <div className="w-full text-white">
       <section className="py-5 sm:py-5 lg:py-5">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl mx-auto xl:max-w-4xl">
@@ -35,7 +35,7 @@ const Article1 = () => {
                 className="w-96 h-auto mx-auto my-8 rounded-md"
                 alt="About Hero"
                 width={1000}
-                height={500}
+                height={400}
                 loading="lazy"
               />
 

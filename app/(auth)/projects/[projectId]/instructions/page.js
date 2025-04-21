@@ -22,8 +22,8 @@ const page = async ({params}) => {
         <br />
         {`<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`}
       </code>
-      <div className="text-white flex gap-2 items-center mt-4 md:mt-0">
-        <CopyIcon />
+      <div className="text-white mt-4 md:mt-0">
+        
         <CopyBtn text={`<my-widget project-id="${projectId}"></my-widget>\n<script src="${process.env.WIDGET_URL}/widget.umd.js"></script>`} />
       </div>
     </div>

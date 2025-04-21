@@ -31,7 +31,7 @@ const page = async ({ params }) => {
     {/* Project Details */}
     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
       <div>
-        <h1 className="text-2xl sm:text-3xl font-bold mb-2">{project.name}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-white">{project.name}</h1>
         <h2 className="text-gray-600 text-lg sm:text-xl">{project.description}</h2>
       </div>
       <div className="flex flex-col gap-2">

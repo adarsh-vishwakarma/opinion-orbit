@@ -13,7 +13,7 @@ export default function UserLayout({ children }) {
       <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} session={session}/>
       <div className="flex flex-1">
         <Sidebar open={sidebarOpen} />
-        <main className="flex-1 p-4 lg:p-8 ml-0 lg:ml-64 transition-all duration-300">
+        <main className="flex-1 p-4 lg:p-8 ml-0 lg:ml-64 transition-all duration-300 bg-gray-900">
           {children}
         </main>
       </div>

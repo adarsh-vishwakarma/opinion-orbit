@@ -1,23 +1,36 @@
 "use client";
 import { deleteProject } from "@/actions/deleteProject";
-import React from "react";
+import React, { useState } from "react";
+import { Trash, Loader2 } from "lucide-react";
+import { Button } from "./ui/button"; // Import Button from UI
 
 const DeleteBtn = ({ projectId, onProjectDeleted }) => {
+  const [isDeleting, setIsDeleting] = useState(false); // Track deletion state
+
   const handleDeleteProject = async () => {
+    setIsDeleting(true);
     const result = await deleteProject(projectId);
 
     if (result) {
-      onProjectDeleted(projectId); // Update the UI after successful deletion
+      onProjectDeleted(projectId); // Update UI
     }
+
+    setIsDeleting(false);
   };
 
   return (
-    <button
+    <Button
       onClick={handleDeleteProject}
-      className="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-900 w-full sm:w-auto"
+      variant="destructive" // Assuming your UI has a 'destructive' variant for red buttons
+      className="p-3 rounded-full"
+      disabled={isDeleting}
     >
-      Delete
-    </button>
+      {isDeleting ? (
+        <Loader2 className="h-5 w-5 animate-spin" />
+      ) : (
+        <Trash className="h-5 w-5" />
+      )}
+    </Button>
   );
 };
 
